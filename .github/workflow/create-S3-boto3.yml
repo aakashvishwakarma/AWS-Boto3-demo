@@ -25,7 +25,7 @@ jobs:
         python-version: ${{ matrix.python-version }}
         
     - name: "Configure AWS Credentials" 
-      uses: aws-actions/configure-aws-credentials@v1
+      uses: aws-actions/configure-aws-credentials@v2
       with:
     # AWS Access Key ID. This input is required if running in the GitHub hosted environment. It is optional if running in a self-hosted environment that already has AWS credentials, for example on an EC2 instance.
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}

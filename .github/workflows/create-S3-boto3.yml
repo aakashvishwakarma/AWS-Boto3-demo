@@ -11,13 +11,13 @@ on:
 jobs:
   S3-bucket-Creation:
   name: Create S3 bucket
-    runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        python-version: [3.9]
+  runs-on: ubuntu-latest
+  strategy:
+    fail-fast: false
+    matrix:
+      python-version: [3.9]
 
-    steps:
+  steps:
     - uses: actions/checkout@v2
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v2
@@ -28,17 +28,18 @@ jobs:
       uses: aws-actions/configure-aws-credentials@v2
       with:
     # AWS Access Key ID. This input is required if running in the GitHub hosted environment. It is optional if running in a self-hosted environment that already has AWS credentials, for example on an EC2 instance.
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
     # AWS Secret Access Key. This input is required if running in the GitHub hosted environment. It is optional if running in a self-hosted environment that already has AWS credentials, for example on an EC2 instance.
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY_ID }}
    # AWS Region, e.g. us-east-2, us-east-1
-          aws-region:  us-east-1
+        aws-region:  us-east-1
    
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
         python -m pip install flake8 pytest boto3 
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+    
     - name: Lint with flake8
       run: |
         # stop the build if there are Python syntax errors or undefined names

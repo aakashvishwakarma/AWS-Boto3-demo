@@ -2,15 +2,14 @@ name: Python Boto3 example for AWS
 
 on:
   push:
-    branches: [ feature1 ]
+    branches: feature1
   pull_request:
-    branches: [ main ]
+    branches: main
   path-ignore:
     README.md
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -18,7 +17,6 @@ jobs:
         python-version: [3.9]
 
     steps:
-    
     - uses: actions/checkout@v2
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v2

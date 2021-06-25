@@ -48,6 +48,5 @@ import glob                 #The glob module finds all the pathnames matching a 
 files =glob.glob('Data/*')
 
 for file in files:
-     upload_files(file,bucket_name, args=new_args)
-     print('Uploaded',file)
-  
+    upload_files(file,bucket_name, args=new_args)
+    print('Uploaded',file)

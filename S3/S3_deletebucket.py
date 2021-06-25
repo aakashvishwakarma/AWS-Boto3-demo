@@ -5,7 +5,7 @@ S3_client = boto3.client('s3')
 date = datetime.datetime.now()
 
 current_date = "{}-{}-{}".format(date.month, date.day, date.year)
-bucket_name = 'aws-bucket-{}'.format(current_date)  #Bucket name
+bucket_name = 'aws-bucket-{}'.format(current_date)  # Bucket name
 
 #Deleting a object in given bucket 
 response = S3_client.delete_bucket(

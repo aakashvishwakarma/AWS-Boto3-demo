@@ -21,7 +21,7 @@ for bucket in s3.buckets.all():
 # Code to create a bucket
 bucket =s3.Bucket(bucket_name) 
 if bucket in s3.buckets.all() :   #loop to check if bucket exist don't create else create bucket
-    print("bucket exit")
+    print("bucket exist")
 else:
     response = s3_client.create_bucket(
     ACL='private',
@@ -36,7 +36,3 @@ else:
     # ObjectLockEnabledForBucket=True|False
 )
 print(response)
-
-
-
-

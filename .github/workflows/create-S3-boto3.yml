@@ -11,7 +11,7 @@ on:
 jobs:
   S3-bucket-Creation:
   name: Create S3 bucket
-  runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
   strategy:
     fail-fast: false
     matrix:

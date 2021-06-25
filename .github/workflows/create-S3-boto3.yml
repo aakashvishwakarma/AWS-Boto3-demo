@@ -9,10 +9,9 @@ on:
     README.md
 
 jobs:
-  S3-bucket-Creation:
   name: Create S3 bucket
-    runs-on: ubuntu-latest
-  strategy:
+  runs-on: ubuntu-latest
+    strategy:
     fail-fast: false
     matrix:
       python-version: [3.9]

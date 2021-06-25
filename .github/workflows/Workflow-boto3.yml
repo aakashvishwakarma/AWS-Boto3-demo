@@ -53,6 +53,7 @@ jobs:
     
     - name: Run python files for S3 bucket
       run: |
+        cd S3
         python S3_createbucket.py 
         python S3_uploaddata.py 
        

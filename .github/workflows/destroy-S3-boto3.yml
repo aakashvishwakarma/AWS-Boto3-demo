@@ -44,6 +44,7 @@ jobs:
     - name: Run python files for S3 bucket
       run: |
         cd S3
-        python S3_deletebucket.py 
         python S3_deleteddata.py
+        python S3_deletebucket.py 
+
        

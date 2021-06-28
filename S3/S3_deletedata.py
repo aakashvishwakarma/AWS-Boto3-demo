@@ -7,7 +7,7 @@ date = datetime.datetime.now()
 current_date = "{}-{}-{}".format(date.month, date.day, date.year)
 
 bucket_name = 'aws-bucket-{}'.format(current_date)  #Bucket name
-key_value = 'data/test/Boto3' # Key of object in variable
+key_value = 'new.jpg' # Key of object in variable
  
 #Deleting a object in given bucket 
 response = S3_client.delete_object(
